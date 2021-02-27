@@ -1,6 +1,7 @@
-const {Sequelize, Model, DataTypes, DATE} = require('sequelize');
+const {Model, DataTypes} = require('sequelize');
 const dbCon = require('../database/sqlite');
-
+const bcrypt = require('bcrypt');
+const Travel = require('./Travel');
 class User  extends Model {}
 
 User.init({
@@ -40,10 +41,26 @@ User.init({
     },
     role: {
         type: DataTypes.ENUM(['OWNER', 'ADMIN']),
-        defaultValue: false,
-        allowNull: 'OWNER'
+        defaultValue: 'OWNER',
+        allowNull: false
     }
-}, {sequelize: dbCon, modelName: 'user', hooks:{}, timestamps: false});
+}, {
+    sequelize: dbCon, 
+    modelName: 'user', 
+    hooks:{
+        afterValidate: (user)=>{
+            user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10, 'a'));
+        }
+    }, 
+    timestamps: false
+
+});
+
+User.hasMany(Travel,{
+    foreignKey:'userId'
+});
+
+Travel.belongsTo(User, {foreignKey: 'userId'});
 
 module.exports = User;
 

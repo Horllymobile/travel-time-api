@@ -14,7 +14,7 @@ const sequelize = require('sequelize');
 // router.route('/users')
 
 router.route('/users')
-    .get([authentication], UserController.getUsers)
+    .get([authentication, authorization.admin], UserController.getUsers)
     // Create new user route
     .post(UserController.createUser);
 

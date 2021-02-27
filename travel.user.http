@@ -1,0 +1,27 @@
+
+POST http://localhost:3000/api/travels HTTP/1.1
+content-type: application/json
+X-Auth-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyMWdteXFnOTdra2xsZ3Jlejh0cmF2ZWwiLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTQzODIyNzYsImV4cCI6MTYxNDM4NTg3Nn0.VlguxgqJrRqEaAnhjrO5-Qkc1yDUplQQAXAVRSA4Eoo
+
+{
+    "location": "Muchen Germany",
+    "purpose": "Business",
+    "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMunich&psig=AOvVaw34DQjAh_NZRcBUNhF9D0Wz&ust=1614257356342000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJD3vrnHgu8CFQAAAAAdAAAAABAD",
+    "description": "I Traveled to muchen on a business trip it was an amazing experience",
+    "year": "2019-09-07"
+}
+
+
+
+###
+GET http://localhost:3000/api/travels HTTP/1.1
+Content-Type: application/application/json
+X-Auth-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyMWdteXFnOTdra2xsZ3Jlejh0cmF2ZWwiLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTQzODIyNzYsImV4cCI6MTYxNDM4NTg3Nn0.VlguxgqJrRqEaAnhjrO5-Qkc1yDUplQQAXAVRSA4Eoo
+
+###
+GET http://localhost:3000/api/travels/travel1gmyqg97kkllgsxaquser HTTP/1.1
+Content-Type: application/application/json
+X-Auth-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyMWdteXFnOTdra2xsZ3Jlejh0cmF2ZWwiLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTQzODIyNzYsImV4cCI6MTYxNDM4NTg3Nn0.VlguxgqJrRqEaAnhjrO5-Qkc1yDUplQQAXAVRSA4Eoo
+
+
+

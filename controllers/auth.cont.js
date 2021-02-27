@@ -1,7 +1,7 @@
 const User = require('../models/User');
 const sequelize = require('sequelize');
 const jwt = require('./../helpers/jwt');
-
+const bcrypt = require('bcrypt');
 class AuthController {
     constructor(){}
 
@@ -15,8 +15,8 @@ class AuthController {
     
             if(!user) return res.status(403).json({message: 'Invalid email address'});
 
-
-            if(user.password !== req.body.password) return res.status(200).json({error: "Incorrect password"});
+            const compare = await bcrypt.compare(req.body.password, user.password);
+            if(!compare) return res.status(200).json({error: "Incorrect password"});
 
             const token = jwt(user)
 
