@@ -28,7 +28,7 @@ Code.init({
             user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10, 'a'));
         }
     }, 
-    timestamps: false
+    timestamps: true
 
 });
 
