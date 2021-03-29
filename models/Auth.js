@@ -11,7 +11,7 @@ RefreshToken.init(
             unique: true
         },
     },
-    {sequelize: dbCon, modelName: 'refreshToken', hooks:{}, timestamps: false});
+    {sequelize: dbCon, modelName: 'refreshToken', hooks:{}, timestamps: true});
 
 module.exports = RefreshToken;
 

@@ -35,7 +35,7 @@ Travel.init(
             allowNull: false,
         }
     },
-    {sequelize: dbCon, modelName: 'travel', hooks:{}, timestamps: false});
+    {sequelize: dbCon, modelName: 'travel', hooks:{}, timestamps: true});
 
 // Travel.belongsTo(User, {foreignKey: 'userId'});
 
