@@ -1,5 +1,5 @@
 
-POST http://localhost:5000/api/auth/register HTTP/1.1
+POST https://time4travel.herokuapp.com/api/auth/register HTTP/1.1
 content-type: application/json
 
 {
@@ -14,9 +14,9 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3000/api/users HTTP/1.1
+GET https://time4travel.herokuapp.com/api/users HTTP/1.1
 Content-Type: application/json
-X-Auth-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyMWdteXFnOTdra2xsZ3Jlejh0cmF2ZWwiLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTQzODIyNzYsImV4cCI6MTYxNDM4NTg3Nn0.VlguxgqJrRqEaAnhjrO5-Qkc1yDUplQQAXAVRSA4Eoo
+X-Auth-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyODZsYmxrbXVsYTBuMXRyYXZlbCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYxNzAyMjI2OCwiZXhwIjoxNjE3MDIyODY4fQ.nVw8RVbFr9mHF9zDjWCDIRB6B8PH_6h4AYMjQWmGM-Y
 
 ###
 GET  http://localhost:3000/api/users/user1gmyqg97kkllgrez8travel HTTP/1.1
@@ -43,7 +43,7 @@ Content-Type: application/json
 X-Auth-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyMWdteXFnOTdra2xsZ3Jlejh0cmF2ZWwiLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTQzODIyNzYsImV4cCI6MTYxNDM4NTg3Nn0.VlguxgqJrRqEaAnhjrO5-Qkc1yDUplQQAXAVRSA4Eoo
 
 ###
-POST http://localhost:3000/api/auth/login
+POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {

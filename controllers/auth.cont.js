@@ -62,9 +62,15 @@ class AuthController {
             const saved = await Auth.create({
                 refresh_token:refreshToken // saving refreshToken to the database
             });
+            console.log(token, refreshToken);
             user = _.pick(user, ['userId','firstName', 'lastName', 'username', 'email', 'phone', 'date', 'travels']);
             // if refreshToken saving is successful this will be returned
-            if(saved) return res.setHeader('X-Auth-Token', token).status(200).json({accessToken: token, refreshToken, user});
+            if(saved) return res
+            .status(200).json({
+                accessToken: token,
+                'refreshToken':refreshToken,
+                user: user
+            });
             
         } catch (error) {
             return res.status(500).json(error);// catching any error that occurs 
