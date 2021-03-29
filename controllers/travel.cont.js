@@ -1,3 +1,7 @@
+/* Travel controller 
+* By Abraham James Olamide (aka) horllymobile
+* @horllymobile
+*/
 // Getting user model from models
 const User = require('../models/User');
 const Travel = require('../models/Travel');

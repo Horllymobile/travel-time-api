@@ -43,6 +43,11 @@ User.init({
         type: DataTypes.ENUM(['OWNER', 'ADMIN']),
         defaultValue: 'OWNER',
         allowNull: false
+    },
+    approved: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
     }
 }, {
     sequelize: dbCon, 

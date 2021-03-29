@@ -1,3 +1,8 @@
+/* User controller 
+* By Abraham James Olamide (aka) horllymobile
+* @horllymobile
+*/
+
 // Getting user model from models
 const User = require('../models/User');
 const sequelize = require('sequelize');
@@ -25,45 +30,17 @@ const Travel = require('../models/Travel');
         try {
             
             let user = await User.findOne({
-                where: sequelize.where(sequelize.literal('userId'), '==', req.params.userId),
+                where: sequelize.where(sequelize.literal('userId'), '==', req.user.userId),
                 include: [Travel]
             });
             if(!user) return res.status(404).json({"message": `User with this userId of ${req.params.userId} is not found`});
-            console.log(user)
-            // user = _.pick(user, ['userId','firstName', 'lastName', 'username', 'email', 'phone', 'date', 'role', 'travel']);
-            return res.status(302).send(user);
+            // console.log(user)
+            user = _.pick(user, ['userId','firstName', 'lastName', 'username', 'email', 'phoneNumber', 'date_register', 'role', 'travels']);
+            return res.status(200).send(user);
         } catch (error) {
             return res.status(500).json({'error_message': error.message});
         }
     }
-
-    static async createUser(req, res) {
-        let error = validateUser(req.body);
-        if(error) return res.status(401).json({message: error.message});
-        try {
-            
-
-            let user = await User.create({
-                userId: uniqid('user', 'travel'),
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                username: req.body.username,
-                email: req.body.email,
-                password: req.body.password,
-                phoneNumber: req.body.phoneNumber,
-                // role: req.body.role
-            }, 
-            ['userId', 'firstName', 'lastName', 'username', 'email', 'password', 'phoneNumber']
-            );
-
-            user = _.pick(user, ['userId','firstName', 'lastName', 'username', 'email', 'phone', 'date']);
-            return res.status(201).json(user);
-
-        } catch (err) {
-            return res.status(400).json({error_message: err.errors[0].message});
-        }
-    }
-
     static async updateUser(req, res) {
         try {
 

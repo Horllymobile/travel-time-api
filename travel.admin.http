@@ -1,7 +1,7 @@
 
-POST http://localhost:3000/api/travels HTTP/1.1
+POST http://localhost:6000/api/travels HTTP/1.1
 content-type: application/json
-X-Auth-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyMWdteXFnN28xa2xsZzB4cnF0cmF2ZWwiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2MTQzODI5MzksImV4cCI6MTYxNDM4NjUzOX0.IkgrYZRphkWc_242P7qqjD4EdpeMhl9rp0Zog5cWQbg
+X-Auth-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyMTNza2tsd2V2NHAydHJhdmVsIiwicm9sZSI6Ik9XTkVSIiwiaWF0IjoxNjE0OTU3NDIzLCJleHAiOjE2MTQ5NTc1NDN9.n88PNEHjRtLgVSzOwbQIlAsz_TG-1NpHZ-5KGGb4XCE
 
 {
     "location": "North Germany",
